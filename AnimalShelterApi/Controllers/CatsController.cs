@@ -94,7 +94,6 @@ namespace AnimalShelterApi.Controllers
       return _db.Cats.Any(e => e.CatId == id);
     }
 
-    [ApiVersion("2.0")]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteCat(int id)
     {
