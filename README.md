@@ -1,29 +1,26 @@
-# _Travel Api_
+# _Animal Shelter Api_
 
 #### By: _**David Gamble**_
 
-#### _Files, Code, and setup with comments for using Identity and Roles to add to projects._
+#### _Epicodus project to demonstrate building an API and using swagger to test end points._
 
 ## Technologies Used
 
-
-
-* [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)_
-* [ASP.NET Core MVC](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-3.1)
-* [MySQL](https://dev.mysql.com/)
-* [Entity Framework Core 6.0.0](https://docs.microsoft.com/en-us/ef/core/)
-* [Swagger](https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-nswag?view=aspnetcore-3.1&tabs=visual-studio)
-* [Postman](postman.com)
-
+* _C#_
+* _.NET 6_
+* _ASP.NET Core MVC 6_
+* _Entity Framework Core_
+* _MySql_
+* _Swagger_
 
 ### Description
-An API that functions as a recipe archive for coffee drinks from around the world. It utilizes RESTful principles, version control, pagination, and has integrated authentication to keep the API Read-Only for all users except administrators. The user is able to see the in-use version of the API when using Postman.
+
+_This is an animal shelter web api that allows users to add, update, delete, and get all cats and dogs from the animal shelter.  The user can get all the dogs and cats as well as search for either dogs or cats by name, breed, or a minimum age._
 
 ## Setup/Installation Requirements
 
-* _Clone the repository to your desktop from: https://github.com/DavidDGamble/TravelApi.Solution.git_
-* _Create appsettings.json file in ASPNETIdentityRoles folder_
-
+* _Clone the repository to your desktop from: https://github.com/DavidDGamble/AnimalShelter.Solution.git_
+* _Create appsettings.json file in AnimalShelterApi folder_
 ```
 {
     "Logging": {
@@ -37,9 +34,8 @@ An API that functions as a recipe archive for coffee drinks from around the worl
       "DefaultConnection": "Server=localhost;Port=3306;database=[DATABASE_NAME];uid=[USERNAME];pwd=[PASSWORD];"
     }
   }
-
 ```
-* _run dotnet commands below in _TravelApi_
+* _run dotnet commands below in AnimalShelterApi folder_
 ```
 dotnet restore
 ```
@@ -49,17 +45,13 @@ dotnet ef database update
 ```
 dotnet watch run
 ```
- #### Launch the API
-  1) Navigate to TravelApi.Solution/TravelApi directory using the MacOS Terminal or Windows Powershell (e.g. `cd Desktop/TravelApi.Solution/TravelApi`).
-  2) Run the command `dotnet run` to have access to the API in Postman or browser.
-
+* _dotnet watch run will open the swagger ui where you can test the endpoints or you can alternatively use PostMan_
 ------------------------------
 
 ## API Documentation
-Explore the API endpoints in Postman or a browser. You will not be able to utilize authentication in a browser.
 
 ### Using Swagger Documentation 
-To explore the Travel-Api with NSwag, launch the project using `dotnet run` with the Terminal or Powershell, and input the following URL into your browser: `http://localhost:5000/swagger`
+To explore the Animal Shelter Api with Swagger, launch the project using `dotnet watch run` with the Terminal or Powershell.
 
 ### Endpoints
 Base URL: `https://localhost:5000`
@@ -67,40 +59,39 @@ Base URL: `https://localhost:5000`
 #### HTTP Request Structure
 ```
 GET /api/{component}
-PUT /api/{component}
-DELETE /api/{component}/{id}
+POST /api/{component}
 GET /api/{component}/{id}
-POST /api/{component}/{id}
+PUT /api/{component}/{id}
+DELETE /api/{component}/{id}
 ```
 
 #### Example Query
-
 ```
-https://localhost:5001/api/Destinations/1
-
+https://localhost:5000/api/Dogs/1
 ```
 
 #### Sample JSON Response
-``` {
-  "destinationId": 1,
-  "name": "portland",
-  "reviews": null
+```
+{
+  "dogId": 1,
+  "name": "Taco",
+  "age": 9,
+  "breed": "Pitbull"
 } 
 ```
 
 #### Example Query
-
 ```
-https://localhost:5001/api/Reviews/5
-
+https://localhost:5000/api/Cats?name=bella
 ```
+
 #### Sample JSON Response
 ``` 
 {
-  "reviewId": 5,
-  "summary": "gresham sucks",
-  "rating": 2,
-  "destinationId": 2
+  "catId": 3,
+  "name": "Bella",
+  "age": 6,
+  "breed": "Tabby Cat"
 }
 ```
 
