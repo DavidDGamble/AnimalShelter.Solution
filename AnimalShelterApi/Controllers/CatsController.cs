@@ -4,7 +4,8 @@ using AnimalShelterApi.Models;
 
 namespace AnimalShelterApi.Controllers
 {
-  [Route("api/[controller]")]
+  [ApiVersion("1.0")]
+  [Route("api/v{version:apiVersion}/[controller]")]
   [ApiController]
   public class CatsController : ControllerBase
   {
@@ -93,6 +94,7 @@ namespace AnimalShelterApi.Controllers
       return _db.Cats.Any(e => e.CatId == id);
     }
 
+    [ApiVersion("2.0")]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteCat(int id)
     {
