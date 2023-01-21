@@ -15,7 +15,7 @@
 
 ### Description
 
-_This is an animal shelter web api that allows users to add, update, delete, and get all cats and dogs from the animal shelter.  The user can get all the dogs and cats as well as search for either dogs or cats by name, breed, or a minimum age._
+_This is an animal shelter web api that allows users to add, update, delete, and get all cats and dogs from the animal shelter.  The user can get all the dogs and cats as well as search for either dogs or cats by name, breed, or a minimum age.  I also implemented versioning on the controller routes.  All routes are v1 except for RandomCats() in the CatsController which is v2._
 
 ## Setup/Installation Requirements
 
