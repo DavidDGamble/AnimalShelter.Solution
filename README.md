@@ -51,23 +51,25 @@ dotnet watch run
 ## API Documentation
 
 ### Using Swagger Documentation 
-To explore the Animal Shelter Api with Swagger, launch the project using `dotnet watch run` with the Terminal or Powershell.
+
+* To explore the Animal Shelter Api with Swagger, launch the project using `dotnet watch run` with the Terminal or Powershell.
+* In the upper right corner of the Swagger UI select the version you would like to use.
 
 ### Endpoints
 Base URL: `https://localhost:5000`
 
 #### HTTP Request Structure
 ```
-GET /api/{component}
-POST /api/{component}
-GET /api/{component}/{id}
-PUT /api/{component}/{id}
-DELETE /api/{component}/{id}
+GET /api/v1/{component}
+POST /api/v1/{component}
+GET /api/v1/{component}/{id}
+PUT /api/v1/{component}/{id}
+DELETE /api/v1/{component}/{id}
 ```
 
 #### Example Query
 ```
-https://localhost:5000/api/Dogs/1
+https://localhost:5000/api/v1/Dogs/1
 ```
 
 #### Sample JSON Response
@@ -82,7 +84,7 @@ https://localhost:5000/api/Dogs/1
 
 #### Example Query
 ```
-https://localhost:5000/api/Cats?name=bella
+https://localhost:5000/api/v1/Cats?name=bella
 ```
 
 #### Sample JSON Response
@@ -95,9 +97,29 @@ https://localhost:5000/api/Cats?name=bella
 }
 ```
 
+#### HTTP Request Structure for V2
+```
+GET /api/v2/{component}
+```
+
+#### Example Query
+```
+https://localhost:5000/api/v2/Cats
+```
+
+#### Sample JSON Response
+``` 
+{
+  "catId": 1,
+  "name": "Moonbeam",
+  "age": 8,
+  "breed": "Maine Coon"
+}
+```
+
 ## Known Bugs
 
-* _No known issues_
+* _RandomCat() in CatsController returns cat with an id of 1 and not a random cat_
 
 ## License
 
