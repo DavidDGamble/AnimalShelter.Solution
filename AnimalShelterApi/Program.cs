@@ -1,9 +1,9 @@
-using AnimalShelterApi.Models;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
+using AnimalShelterApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

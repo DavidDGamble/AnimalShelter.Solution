@@ -23,17 +23,17 @@ _This is an animal shelter web api that allows users to add, update, delete, and
 * _Create appsettings.json file in AnimalShelterApi folder_
 ```
 {
-    "Logging": {
-      "LogLevel": {
-        "Default": "Information",
-        "Microsoft.AspNetCore": "Warning"
-      }
-    },
-    "AllowedHosts": "*",
-    "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=[DATABASE_NAME];uid=[USERNAME];pwd=[PASSWORD];"
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
     }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;database=[DATABASE_NAME];uid=[USERNAME];pwd=[PASSWORD];"
   }
+}
 ```
 * _run dotnet commands below in AnimalShelterApi folder_
 ```
