@@ -108,5 +108,19 @@ namespace AnimalShelterApi.Controllers
 
       return NoContent();
     }
+
+    [ApiVersion("2.0")]
+    [HttpGet]
+    public async Task<ActionResult<Cat>> RandomCat()
+    {
+      IQueryable<Cat> query = _db.Cats.AsQueryable();
+
+      Random rd = new Random();
+      int randNum = rd.Next(1,query.Count());
+      Cat cat = await _db.Cats.FindAsync(randNum);
+      query = query.Where(entry => entry.CatId == randNum);
+
+      return cat;
+    }
   }
 }
